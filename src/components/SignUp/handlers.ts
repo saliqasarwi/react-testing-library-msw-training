@@ -1,7 +1,14 @@
-import { http, HttpResponse } from "msw";
+import { rest } from "msw";
 
 export const handlers = [
-  http.post("/hack your URL", () => {
-    return HttpResponse.json({});
+  rest.post("https://api.realworld.io/api/users", async (req, res, ctx) => {
+    return res(
+      ctx.json({
+        user: {
+          username: "testuser",
+          email: "test@gmail.com",
+        },
+      })
+    );
   }),
 ];

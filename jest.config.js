@@ -12,7 +12,6 @@ module.exports = {
     "^.+\\.(js|jsx)$": "babel-jest",
   },
   transformIgnorePatterns: [
-    `[/\\\\]node_modules[/\\\\](?!${esModules}).+\\.(js|jsx|mjs|cjs|ts|tsx)$`,
-    "^.+\\.module\\.(css|sass|scss)$",
+   `/node_modules/(?!${esModules})`,
   ],
 };
